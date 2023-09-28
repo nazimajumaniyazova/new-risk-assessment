@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import './App.scss';
+import ThemeToggle from './components/ThemeToggle/ThemeToggle';
+import Test from './components/Test/Test';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <div id="root">
       <div></div>
       <h1>Vite + React</h1>
       <div className="card">
@@ -16,10 +17,9 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <ThemeToggle></ThemeToggle>
+      <Test />
+    </div>
   );
 }
 
