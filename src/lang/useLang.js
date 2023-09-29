@@ -5,7 +5,7 @@ function useLang() {
   const { lang, setLang } = useContext(LangContext);
 
   const toggleLang = () => {
-    const newLang = lang === 'ru' ? 'en' : 'ru';
+    const newLang = lang === 'ru' ? 'uz' : 'ru';
 
     localStorage.setItem(LOCAL_STORAGE_LANG_KEY, newLang);
     setLang(newLang);

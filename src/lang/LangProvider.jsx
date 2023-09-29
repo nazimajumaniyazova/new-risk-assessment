@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ConfigProvider } from 'antd';
 import enUS from 'antd/locale/en_US';
 import ruRU from 'antd/locale/ru_RU';
+import uzUZ from 'antd/locale/uz_UZ';
 
 import LangContext, { LOCAL_STORAGE_LANG_KEY } from './LangContext';
 
@@ -12,11 +13,11 @@ function LangProvider({ children }) {
 
   return (
     <LangContext.Provider value={{ lang, setLang }}>
-      <ConfigProvider locale={lang === 'ru' ? ruRU : enUS}>
-        {children}
-      </ConfigProvider>
+      <ConfigProvider locale={uzUZ}>{children}</ConfigProvider>
     </LangContext.Provider>
   );
 }
 
 export default LangProvider;
+
+//lang === 'ru' ? ruRU : enUS

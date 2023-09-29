@@ -22,6 +22,8 @@ function ThemeProvider({ children }) {
       colorSuccess: '#50cd89',
       colorError: '#f1416c',
       colorInfo: '#62a4e1',
+      //colorBgContainer: '#2b2d2d',
+      //colorBgContainer: '#1f2020',
     },
   };
 

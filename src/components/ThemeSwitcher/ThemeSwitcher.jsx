@@ -11,23 +11,21 @@ function ThemeSwitcher() {
   const { darkMode, toggleTheme } = useTheme();
 
   return (
-    <div>
-      <Switch
-        checkedChildren={
-          <Moon
-            size={18}
-            variant={'Bold'}
-            color={darkMode ? token.colorWarning : undefined}
-          />
-        }
-        unCheckedChildren={
-          <Sun1 size={18} variant={'Bold'} color={token.colorWarning} />
-        }
-        defaultChecked={darkMode}
-        onChange={toggleTheme}
-        className={darkMode ? styles.darkMode : styles.lightMode}
-      />
-    </div>
+    <Switch
+      checkedChildren={
+        <Moon
+          size={18}
+          variant={'Bold'}
+          color={darkMode ? token.colorWarning : undefined}
+        />
+      }
+      unCheckedChildren={
+        <Sun1 size={18} variant={'Bold'} color={token.colorWarning} />
+      }
+      defaultChecked={darkMode}
+      onChange={toggleTheme}
+      className={darkMode ? styles.darkMode : styles.lightMode}
+    />
   );
 }
 

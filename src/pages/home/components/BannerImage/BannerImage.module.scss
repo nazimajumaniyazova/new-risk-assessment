@@ -1,0 +1,13 @@
+.images {
+  position: relative;
+}
+
+.highlight {
+  position: absolute;
+  top: calc(var(--indent16) * -2);
+  left: calc(var(--indent16) * -2);
+}
+
+.img {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
