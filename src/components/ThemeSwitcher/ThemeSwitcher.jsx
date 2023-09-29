@@ -1,10 +1,10 @@
 import { theme as antd_theme, Switch } from 'antd';
 import { Moon, Sun1 } from 'iconsax-react';
 
-import styles from './ThemeToggle.module.scss';
+import styles from './ThemeSwitcher.module.scss';
 import useTheme from '../../theme/useTheme';
 
-function ThemeToggle() {
+function ThemeSwitcher() {
   const { useToken } = antd_theme;
   const { token } = useToken();
 
@@ -31,4 +31,4 @@ function ThemeToggle() {
   );
 }
 
-export default ThemeToggle;
+export default ThemeSwitcher;

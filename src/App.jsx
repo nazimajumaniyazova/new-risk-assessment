@@ -1,24 +1,19 @@
-import { useState } from 'react';
-import ThemeToggle from './components/ThemeToggle/ThemeToggle';
-import Test from './components/Test/Test';
-
+import LangSwitcher from './components/LangSwitcher/LangSwitcher';
+import ThemeSwitcher from './components/ThemeSwitcher/ThemeSwitcher';
+import { useTranslation } from 'react-i18next';
+import { DatePicker } from 'antd';
 function App() {
-  const [count, setCount] = useState(0);
-
+  const { t } = useTranslation();
   return (
     <div id="root">
       <div></div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <p>{t('test')}</p>
       </div>
-      <ThemeToggle></ThemeToggle>
-      <Test />
+      <ThemeSwitcher></ThemeSwitcher>
+      <LangSwitcher></LangSwitcher>
+      <DatePicker />
     </div>
   );
 }
