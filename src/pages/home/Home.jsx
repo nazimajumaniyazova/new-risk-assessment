@@ -112,7 +112,7 @@ const menuList = [
 function Home() {
   return (
     <>
-      <Header></Header>
+      <Header />
       <Content>
         <Banner />
         <section className={styles.wrapper}>
