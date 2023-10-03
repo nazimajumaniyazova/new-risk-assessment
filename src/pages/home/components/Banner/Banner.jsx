@@ -1,6 +1,6 @@
 import styles from './Banner.module.scss';
 
-import { BannerImage } from '../BannerImage/BannerImage';
+import { BannerImage } from '../../../../components/BannerImage/BannerImage';
 import useTheme from '../../../../theme/useTheme';
 
 import bg_light from './assets/bg_light.svg';

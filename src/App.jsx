@@ -1,12 +1,12 @@
-// import Home from './pages/home/Home';
+import Home from './pages/home/Home';
 import Login from './pages/login/login';
-
+import { SignUp } from './pages/signUp/SignUp';
 function App() {
   return (
     <div id="root">
       {/* <Home /> */}
       <Login />
-      {/* <SignUp/> */}
+      {/* <SignUp /> */}
     </div>
   );
 }

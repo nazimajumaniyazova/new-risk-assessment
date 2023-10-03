@@ -19,7 +19,7 @@ function AppHeader() {
         background: colorBgContainer,
       }}
     >
-      <Logo className={styles.logo} />
+      <Logo classNames={styles.logo} hasText={true} />
       <LangSwitcher />
       <ThemeSwitcher />
     </Header>

@@ -4,7 +4,7 @@ import card_dark from './assets/card_dark.svg';
 import card_light from './assets/card_light.svg';
 
 import styles from './BannerImage.module.scss';
-import useTheme from '../../../../theme/useTheme';
+import useTheme from '../../theme/useTheme';
 
 export const BannerImage = () => {
   const { darkMode } = useTheme();
