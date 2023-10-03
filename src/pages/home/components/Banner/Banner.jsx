@@ -16,7 +16,7 @@ const Banner = () => {
     <div
       className={styles.Root}
       style={{
-        backgroundColor: darkMode ? token.colorBgContainer : undefined,
+        // backgroundColor: darkMode ? token.colorBgContainer : undefined,
         backgroundImage: `url(${darkMode ? bg_dark : bg_light})`,
       }}
     >
