@@ -8,7 +8,6 @@ import { BannerImage } from '../../../home/components/BannerImage/BannerImage';
 const BannerBox = () => {
   const { darkMode } = useTheme();
   return (
-    
     <div
       className={styles.bannerBox}
       style={{ backgroundImage: `url(${darkMode ? bg_dark : bg_light})` }}

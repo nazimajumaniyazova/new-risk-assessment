@@ -1,7 +1,6 @@
 import styles from './LoginForm.module.scss';
 import logo from './assets/logo.svg';
 
-
 import { Button, Checkbox, Form, Image, Input } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ const LoginForm = () => {
     <div className={styles.root}>
       <Image
         src={logo}
-        alt={'logo'}
+        alt={`logo`}
         width={64}
         className={`${styles.logo} user_select_none`}
       />

@@ -6,7 +6,7 @@ const LoginPreview = (props) => {
       <div className={styles.Block}>{props.children}</div>
       <BannerBox />
     </div>
-  )
-}
+  );
+};
 
 export default LoginPreview;
