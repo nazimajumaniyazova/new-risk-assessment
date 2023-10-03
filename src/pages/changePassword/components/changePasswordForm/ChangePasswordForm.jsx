@@ -3,8 +3,10 @@ import styles from './ChangePasswordForm.module.scss';
 import { Button, Form, Input } from 'antd';
 import { ArrowLeft2 } from 'iconsax-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const ChangePasswordForm = () => {
+  const { t } = useTranslation('changePasswordPage');
   const navigate = useNavigate();
   const onFinish = () => {};
   const handleButtonClick = () => navigate('/login');
@@ -17,7 +19,7 @@ const ChangePasswordForm = () => {
         onFinish={onFinish}
       >
         <Form.Item>
-          <div className={styles.title}>Введите номер телефона</div>
+          <div className={styles.title}>{t('Введите номер телефона')}</div>
         </Form.Item>
 
         <Form.Item
@@ -29,16 +31,13 @@ const ChangePasswordForm = () => {
         >
           <Input
             size="large"
-            placeholder={'Номер телефона'}
+            placeholder={t('Номер телефона')}
             autoComplete="off"
             type="text"
           />
         </Form.Item>
 
         <div className={styles.buttons_box}>
-          {/* <Link to="/login" className={styles.button}>
-            <ArrowLeft2 size="32" color="#FF8A65" /> Назад
-          </Link> */}
           <Button
             type="link"
             block
@@ -46,10 +45,10 @@ const ChangePasswordForm = () => {
             className={styles.button}
             onClick={handleButtonClick}
           >
-            <ArrowLeft2 /> Назад
+            <ArrowLeft2 /> {t('Назад')}
           </Button>
           <Button size="large" type="primary" htmlType="submit">
-            Следующий
+            {t('Следующий')}
           </Button>
         </div>
       </Form>
