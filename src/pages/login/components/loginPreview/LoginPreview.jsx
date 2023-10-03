@@ -1,5 +1,6 @@
 import styles from './LoginPreview.module.scss';
 import BannerBox from '../BannerBox/BannerBox';
+
 const LoginPreview = (props) => {
   return (
     <div className={styles.Root}>

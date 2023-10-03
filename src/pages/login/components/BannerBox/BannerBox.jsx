@@ -3,7 +3,7 @@ import styles from './BannerBox.module.scss';
 import useTheme from '../../../../theme/useTheme';
 import bg_light from './assets/bg_light.svg';
 import bg_dark from './assets/bg_dark.svg';
-import { BannerImage } from '../../../home/components/BannerImage/BannerImage';
+import { BannerImage } from '../../../../components/BannerImage/BannerImage';
 
 const BannerBox = () => {
   const { darkMode } = useTheme();
