@@ -5,12 +5,10 @@ import useTheme from '../../../../theme/useTheme';
 
 import bg_light from './assets/bg_light.svg';
 import bg_dark from './assets/bg_dark.svg';
-import useAntdToken from '../../../../hooks/useAntdToken';
 import { useTranslation } from 'react-i18next';
 
 const Banner = () => {
   const { darkMode } = useTheme();
-  const { token } = useAntdToken();
 
   const { t } = useTranslation('homePage');
 
@@ -18,7 +16,6 @@ const Banner = () => {
     <div
       className={styles.Root}
       style={{
-        // backgroundColor: darkMode ? token.colorBgContainer : undefined,
         backgroundImage: `url(${darkMode ? bg_dark : bg_light})`,
       }}
     >

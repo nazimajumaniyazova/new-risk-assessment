@@ -1,4 +1,3 @@
-import React from 'react';
 import LangSwitcher from '../../components/LangSwitcher/LangSwitcher';
 import ThemeSwitcher from '../../components/ThemeSwitcher/ThemeSwitcher';
 import LoginForm from './components/loginForm/LoginForm';
@@ -14,8 +13,8 @@ const Login = () => {
             right: 'calc(var(--indent16) * 5)',
             top: 'var(--indent16)',
           }}
-          >
-        <LangSwitcher />
+        >
+          <LangSwitcher />
         </div>
         <div
           style={{
@@ -26,7 +25,7 @@ const Login = () => {
         >
           <ThemeSwitcher />
         </div>
-        <LoginForm/>
+        <LoginForm />
       </LoginPreview>
     </>
   );
