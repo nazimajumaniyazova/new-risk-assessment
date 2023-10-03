@@ -3,7 +3,7 @@
   position: relative;
   word-break: break-word;
   z-index: 1;
-  padding: calc(var(--indent16) * 3) var(--indent16);
+  padding: calc(var(--indent16) * 4) var(--indent16);
 
   background-position: center;
   background-size: contain;
@@ -36,7 +36,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: var(--indent16);
+  gap: calc(var(--indent16) * 2);
   align-items: center;
 }
 

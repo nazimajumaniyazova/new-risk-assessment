@@ -2,5 +2,17 @@
   max-width: 1420px;
   padding-left: 10px;
   padding-right: 10px;
+  padding-top: calc(var(--indent16) * 5);
+  padding-bottom: calc(var(--indent16) * 5);
   margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--indent16) * 4);
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: calc(var(--indent16) * 2);
 }
