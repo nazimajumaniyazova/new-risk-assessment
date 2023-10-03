@@ -1,4 +1,4 @@
-import styles from './styles/BannerBox.module.scss';
+import styles from './BannerBox.module.scss';
 
 import useTheme from '../../../../theme/useTheme';
 import bg_light from './assets/bg_light.svg';
