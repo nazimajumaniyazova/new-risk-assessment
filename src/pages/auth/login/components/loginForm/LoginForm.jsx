@@ -51,7 +51,10 @@ const LoginForm = () => {
 
         <Form.Item>
           <Checkbox className="user-select-none">Запомнить</Checkbox>
-          <Link className={styles.forgot_password} href="/recovery/index">
+          <Link
+            className={styles.forgot_password}
+            href="/enter-your-phone-number"
+          >
             Восстановление пароля
           </Link>
         </Form.Item>

@@ -1,12 +1,9 @@
-import Home from './pages/home/Home';
-import Login from './pages/login/login';
-import { SignUp } from './pages/signUp/SignUp';
+import AppRoutes from './router/AppRoutes';
+
 function App() {
   return (
     <div id="root">
-      {/* <Home /> */}
-      <Login />
-      {/* <SignUp /> */}
+      <AppRoutes />
     </div>
   );
 }
