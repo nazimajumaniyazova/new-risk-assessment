@@ -1,7 +1,7 @@
-import LangSwitcher from '../../components/LangSwitcher/LangSwitcher';
-import ThemeSwitcher from '../../components/ThemeSwitcher/ThemeSwitcher';
-import LoginForm from './components/loginForm/LoginForm';
-import LoginPreview from './components/loginPreview/LoginPreview';
+import LangSwitcher from '../../../components/LangSwitcher/LangSwitcher';
+import ThemeSwitcher from '../../../components/ThemeSwitcher/ThemeSwitcher';
+import LoginForm from '../components/loginForm/LoginForm';
+import LoginPreview from '../components/loginPreview/LoginPreview';
 
 const Login = () => {
   return (
