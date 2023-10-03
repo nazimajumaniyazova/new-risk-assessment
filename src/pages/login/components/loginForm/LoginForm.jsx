@@ -1,7 +1,7 @@
-import styles from './styles/LoginForm.module.scss';
+import styles from './LoginForm.module.scss';
 import logo from './assets/logo.svg';
 
-import React from 'react';
+
 import { Button, Checkbox, Form, Image, Input } from 'antd';
 import { Link } from 'react-router-dom';
 
