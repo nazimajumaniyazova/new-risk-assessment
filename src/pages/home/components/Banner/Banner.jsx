@@ -11,7 +11,9 @@ import { useTranslation } from 'react-i18next';
 const Banner = () => {
   const { darkMode } = useTheme();
   const { token } = useAntdToken();
-  const { t } = useTranslation();
+
+  const { t } = useTranslation('homePage');
+
   return (
     <div
       className={styles.Root}
