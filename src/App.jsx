@@ -6,8 +6,6 @@ function App() {
     <div id="root">
       {/* <Home /> */}
       <Login />
-      {/* <Home/> */}
-      <Login />
       {/* <SignUp/> */}
     </div>
   );
