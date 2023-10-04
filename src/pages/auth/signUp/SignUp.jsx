@@ -1,9 +1,5 @@
-import LoginPreview from '../login/components/loginPreview/LoginPreview';
-
-export const SignUp = () => {
-  return (
-    <div>
-      <LoginPreview />
-    </div>
-  );
+const SignUp = () => {
+  return <div>SignUp</div>;
 };
+
+export default SignUp;

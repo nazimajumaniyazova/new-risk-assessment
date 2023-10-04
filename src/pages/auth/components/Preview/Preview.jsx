@@ -10,7 +10,7 @@ export const Preview = ({ children }) => {
         <LangSwitcher />
         <ThemeSwitcher />
       </div>
-      <div className={styles.Root}>
+      <div className={`${styles.Root} ${styles['']}`}>
         <div className={styles.Block}>{children}</div>
         <BannerBox />
       </div>
