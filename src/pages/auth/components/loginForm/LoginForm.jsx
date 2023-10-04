@@ -3,8 +3,10 @@ import styles from './LoginForm.module.scss';
 
 import { Button, Checkbox, Form, Input } from 'antd';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const LoginForm = () => {
+  const { t } = useTranslation('loginPage');
   const onFinish = () => {};
   return (
     <div className={styles.root}>
@@ -16,7 +18,7 @@ const LoginForm = () => {
         onFinish={onFinish}
       >
         <Form.Item>
-          <div className={styles.title}>Войти в учетную запись</div>
+          <div className={styles.title}>{t('Войти в учетную запись')}</div>
         </Form.Item>
 
         <Form.Item
@@ -28,7 +30,7 @@ const LoginForm = () => {
         >
           <Input
             size="large"
-            placeholder={'Имя пользователя'}
+            placeholder={t('Имя пользователя')}
             autoComplete="off"
             type="text"
           />
@@ -44,18 +46,18 @@ const LoginForm = () => {
           <Input.Password
             size="large"
             autoComplete="new-password"
-            placeholder={'Пароль'}
+            placeholder={t('Пароль')}
             type="password"
           />
         </Form.Item>
 
         <Form.Item>
-          <Checkbox className="user-select-none">Запомнить</Checkbox>
+          <Checkbox className="user-select-none">{t('Запомнить')}</Checkbox>
           <Link
             className={styles.forgot_password}
             to="/enter-your-phone-number"
           >
-            Восстановление пароля
+            {t('Восстановление пароля')}
           </Link>
         </Form.Item>
 
@@ -66,13 +68,13 @@ const LoginForm = () => {
           htmlType="submit"
           className={styles.button}
         >
-          Войти
+          {t('Войти')}
         </Button>
 
         <Form.Item>
           <div className={styles.centered}>
-            У вас нет аккаунта?
-            <Link to="/signup"> Зарегистрироваться в системе</Link>
+            {t('У вас нет аккаунта')}?
+            <Link to="/signup">{t('Зарегистрироваться в системе')}</Link>
           </div>
         </Form.Item>
       </Form>
