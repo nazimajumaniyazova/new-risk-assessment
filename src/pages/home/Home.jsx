@@ -22,6 +22,7 @@ import {
   ArrangeHorizontal,
   Reserve,
 } from 'iconsax-react';
+import { useTranslation } from 'react-i18next';
 
 const { Title } = Typography;
 const { Content } = Layout;
@@ -110,6 +111,7 @@ const menuList = [
 ];
 
 function Home() {
+  const { t } = useTranslation('homePage');
   return (
     <>
       <Header />
@@ -118,7 +120,7 @@ function Home() {
         <section className={styles.wrapper}>
           {menuList.map((item, index) => (
             <div key={index}>
-              <Title level={4}>{item.name}</Title>
+              <Title level={4}>{t(item.name)}</Title>
 
               <Divider />
 
