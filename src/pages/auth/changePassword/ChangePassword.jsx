@@ -1,5 +1,5 @@
-import { Preview } from '../components/Preview/Preview';
-import ChangePasswordForm from '../components/changePasswordForm/ChangePasswordForm';
+import Preview from '../components/Preview/Preview';
+import ChangePasswordForm from '../components/ChangePasswordForm/ChangePasswordForm';
 
 const ChangePassword = () => {
   return (

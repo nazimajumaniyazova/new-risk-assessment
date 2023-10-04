@@ -3,7 +3,7 @@ import BannerBox from '../BannerBox/BannerBox';
 import ThemeSwitcher from '../../../../components/ThemeSwitcher/ThemeSwitcher';
 import LangSwitcher from '../../../../components/LangSwitcher/LangSwitcher';
 
-export const Preview = ({ children, classname = '' }) => {
+const Preview = ({ children, classname = '' }) => {
   return (
     <>
       <div className={styles.header}>
@@ -17,3 +17,5 @@ export const Preview = ({ children, classname = '' }) => {
     </>
   );
 };
+
+export default Preview;

@@ -5,7 +5,7 @@ import { ArrowLeft2 } from 'iconsax-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import PatternInput from './components/changePasswordForm/components/patternInput/patternInput';
+import PatternInput from './patternInput/patternInput';
 
 const ChangePasswordForm = () => {
   const { t } = useTranslation('changePasswordPage');

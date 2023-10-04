@@ -1,5 +1,12 @@
+import Preview from '../components/Preview/Preview';
+import SignUpForm from '../components/SignUpForm/SignUpForm';
+
 const SignUp = () => {
-  return <div>SignUp</div>;
+  return (
+    <Preview>
+      <SignUpForm />
+    </Preview>
+  );
 };
 
 export default SignUp;
