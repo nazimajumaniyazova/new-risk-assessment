@@ -1,4 +1,4 @@
-.Root {
+.root {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -7,11 +7,12 @@
 
   background-position: center;
   background-size: cover;
+  &.reverse {
+    flex-direction: row-reverse;
+  }
 }
-.reverse {
-  flex-direction: row-reverse;
-}
-.Block {
+
+.block {
   position: relative;
   width: 50%;
   display: flex;
@@ -34,7 +35,7 @@
   z-index: 2;
 }
 @media (max-width: 1080px) {
-  .Block {
+  .block {
     width: 100%;
     padding: 0 var(--indent16);
   }
