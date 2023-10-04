@@ -4,8 +4,8 @@ import { Button, Form } from 'antd';
 import { ArrowLeft2 } from 'iconsax-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import PatternInput from './components/patternInput/patternInput';
 import { useState } from 'react';
+import PatternInput from './components/changePasswordForm/components/patternInput/patternInput';
 
 const ChangePasswordForm = () => {
   const { t } = useTranslation('changePasswordPage');
