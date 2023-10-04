@@ -1,4 +1,4 @@
-import BannerBox from '../../../login/components/BannerBox/BannerBox';
+import BannerBox from '../../../auth/components/BannerBox/BannerBox';
 import styles from './ChangePasswordPreview.module.scss';
 const ChangePasswordPreview = (props) => {
   return (
