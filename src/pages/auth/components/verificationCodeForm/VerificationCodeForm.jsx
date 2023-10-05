@@ -45,11 +45,9 @@ const VerificationCodeForm = () => {
         </Form.Item>
 
         <Form.Item
+          name="verication_code"
           className={styles.formItem}
-          rules={[
-            { required: true, message: '' },
-            { whitespace: true, message: '' },
-          ]}
+          rules={[{ required: true, message: '' }]}
         >
           <div
             className={darkMode ? styles.otpInputDark : styles.otpInputLight}
@@ -83,10 +81,7 @@ const VerificationCodeForm = () => {
 
         <Form.Item
           name="password"
-          rules={[
-            { required: true, message: '' },
-            { whitespace: true, message: '' },
-          ]}
+          rules={[{ required: true, message: `${t('Пароль не введен!')}` }]}
           style={{ marginBottom: '10px' }}
         >
           <Input.Password
@@ -97,6 +92,7 @@ const VerificationCodeForm = () => {
           />
         </Form.Item>
         <p className={styles.infoText}>{t('Условия')}</p>
+
         <Form.Item
           name="confirm"
           dependencies={['password']}
@@ -113,7 +109,7 @@ const VerificationCodeForm = () => {
                   return Promise.resolve();
                 }
                 return Promise.reject(
-                  new Error('Пароль, который вы ввели, не соответствует!')
+                  new Error(t('Пароль, который вы ввели, не соответствует!'))
                 );
               },
             }),
@@ -127,6 +123,7 @@ const VerificationCodeForm = () => {
         <p className={styles.infoText}>
           {t('Для подтверждения введите пароль ещё раз')}
         </p>
+
         <Form.Item>
           <Button size="large" type="primary" block htmlType="submit">
             {t('Отправить')}

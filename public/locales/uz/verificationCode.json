@@ -9,5 +9,7 @@
   "Пароль": "Parol",
   "Подтверждение пароля":"Parolni tasdiqlash",
   "Условия": "Parol kamida bitta kichik harf, bitta katta harf, bitta raqam va bitta maxsus belgini [@$!%*#?&_^+-=] o'z ichiga olgan 8 dan 16 tagacha belgidan iborat bo'lishi kerak",
-  "Для подтверждения введите пароль ещё раз": "Parolni tasdiqlash uchun takroran kiriting"
+  "Для подтверждения введите пароль ещё раз": "Parolni tasdiqlash uchun takroran kiriting",
+  "Пароль, который вы ввели, не соответствует!":"Siz kiritgan parol mos emas!",
+  "Пароль не введен!":"Parol kiritilmagan!"
 }
