@@ -1,5 +1,5 @@
 import { PatternFormat } from 'react-number-format';
-import useTheme from '../../../../../../../../theme/useTheme';
+import useTheme from '../../../../../theme/useTheme';
 import styles from './patternInput.module.scss';
 
 const PatternInput = ({ placeholder, setPhoneNumber }) => {
