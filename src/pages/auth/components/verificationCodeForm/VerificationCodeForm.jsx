@@ -1,10 +1,9 @@
 import styles from './VerificationCodeForm.module.scss';
 
-import { Button, Form, Typography } from 'antd';
-import { ArrowRotateRight } from 'iconsax-react';
+import { Button, Form, Input, Typography } from 'antd';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import useLang from '../../../../lang/useLang';
 import OtpInput from 'react-otp-input';
 import useTheme from '../../../../theme/useTheme';
@@ -13,20 +12,25 @@ import MyTimer from './Timer/MyTimer';
 const VerificationCodeForm = () => {
   const { t } = useTranslation('verificationCode');
   const { lang } = useLang();
-  let { phone } = useParams();
+  const { phone } = useParams();
   const { darkMode } = useTheme();
-  var newtime = new Date();
-  var times = newtime.setSeconds(newtime.getSeconds() + 20);
+  const navigate = useNavigate();
   const [verificationNumber, setVerificationNumber] = useState('');
   const [btnActive, setBtnActive] = useState(false);
 
-  const onFinish = () => {};
+  var getTime = () => {
+    var newtime = new Date();
+    var times = newtime.setSeconds(newtime.getSeconds() + 60);
+    return times;
+  };
+
+  const onFinish = (val) => {
+    console.log({ ...val, verification_code: verificationNumber });
+    navigate('/');
+  };
 
   const handleChange = (value) => {
-    if (verificationNumber.length < 7) {
-      setVerificationNumber(value);
-    }
-    console.log(value);
+    setVerificationNumber(value);
   };
   return (
     <div className={styles.root}>
@@ -34,13 +38,13 @@ const VerificationCodeForm = () => {
         layout={'vertical'}
         autoComplete="off"
         className={styles.form_container}
+        onFinish={onFinish}
       >
         <Form.Item>
           <div className={styles.title}>{t('Введите код подтверждения')}</div>
         </Form.Item>
 
         <Form.Item
-          name="username"
           className={styles.formItem}
           rules={[
             { required: true, message: '' },
@@ -55,7 +59,7 @@ const VerificationCodeForm = () => {
               onChange={handleChange}
               numInputs={5}
               inputType="number"
-              renderInput={(props) => <input {...props} />}
+              renderInput={(props) => <input maxLength={1} {...props} />}
             />
           </div>
         </Form.Item>
@@ -66,27 +70,68 @@ const VerificationCodeForm = () => {
           <span>{t('Вы получите смс код в течение')}</span>
           <span>
             <span className={styles.time}>
-              <MyTimer expiryTimestamp={times} setBtnActive={setBtnActive} />
-              {t('минут')}
+              <MyTimer
+                expiryTimestamp={getTime}
+                setBtnActive={setBtnActive}
+                btnActive={btnActive}
+              />
             </span>
             {t('на')}
             <span className={styles.bold}>+{phone}</span>
           </span>
         </Typography>
 
-        <div className={styles.buttons_box}>
-          {btnActive ? (
-            <Button type="link" size="large" className={styles.button}>
-              <ArrowRotateRight size="18px" style={{ marginRight: '10px' }} />
-              {t('Отправить повторно')}
-            </Button>
-          ) : (
-            <div></div>
-          )}
-          <Button size="large" type="primary" onClick={onFinish}>
+        <Form.Item
+          name="password"
+          rules={[
+            { required: true, message: '' },
+            { whitespace: true, message: '' },
+          ]}
+          style={{ marginBottom: '10px' }}
+        >
+          <Input.Password
+            size="large"
+            autoComplete="new-password"
+            placeholder={t('Пароль')}
+            type="password"
+          />
+        </Form.Item>
+        <p className={styles.infoText}>{t('Условия')}</p>
+        <Form.Item
+          name="confirm"
+          dependencies={['password']}
+          hasFeedback
+          style={{ marginBottom: '10px' }}
+          rules={[
+            {
+              required: true,
+              message: `${t('Пожалуйста, подтвердите свой пароль')}`,
+            },
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue('password') === value) {
+                  return Promise.resolve();
+                }
+                return Promise.reject(
+                  new Error('Пароль, который вы ввели, не соответствует!')
+                );
+              },
+            }),
+          ]}
+        >
+          <Input.Password
+            placeholder={t('Подтверждение пароля')}
+            size="large"
+          />
+        </Form.Item>
+        <p className={styles.infoText}>
+          {t('Для подтверждения введите пароль ещё раз')}
+        </p>
+        <Form.Item>
+          <Button size="large" type="primary" block htmlType="submit">
             {t('Отправить')}
           </Button>
-        </div>
+        </Form.Item>
       </Form>
     </div>
   );

@@ -1,9 +1,12 @@
-import LoginPreview from '../login/components/loginPreview/LoginPreview';
+import Preview from '../components/Preview/Preview';
+import SignUpForm from '../components/SignUpForm/SignUpForm';
 
-export const SignUp = () => {
+const SignUp = () => {
   return (
-    <div>
-      <LoginPreview />
-    </div>
+    <Preview>
+      <SignUpForm />
+    </Preview>
   );
 };
+
+export default SignUp;

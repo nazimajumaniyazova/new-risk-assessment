@@ -8,6 +8,7 @@
 }
 
 .form_container {
+  overflow: hidden;
   margin-top: 4rem;
   width: 100%;
 }
@@ -32,6 +33,8 @@
   display: flex;
   justify-content: flex-start;
   span {
+    display: flex;
+    flex-wrap: nowrap;
     margin-right: 2px;
   }
 }
@@ -78,6 +81,7 @@
 }
 
 .time {
+  position: relative;
   color: #62a4e1;
   margin: 0 4px;
 }
@@ -85,20 +89,8 @@
 .bold {
   font-weight: 600;
 }
-
-.buttons_box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 600;
-  padding: 6.5px 5px !important;
-}
-.button:hover {
-  color: #62a4e1 !important;
-  background-color: #e9e9e9 !important;
+.infoText {
+  margin-top: 0;
+  margin-bottom: 28px !important;
+  font-size: 14px;
 }

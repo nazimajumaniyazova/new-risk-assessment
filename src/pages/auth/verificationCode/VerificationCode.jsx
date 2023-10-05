@@ -1,4 +1,4 @@
-import { Preview } from '../components/Preview/Preview';
+import Preview from '../components/Preview/Preview';
 import VerificationCodeForm from '../components/verificationCodeForm/VerificationCodeForm';
 
 const VerificationCode = () => {

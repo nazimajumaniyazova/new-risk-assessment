@@ -3,6 +3,7 @@ import Home from '../pages/home/Home';
 import Login from '../pages/auth/login/Login';
 import VerificationCode from '../pages/auth/verificationCode/verificationCode';
 import ChangePassword from '../pages/auth/changePassword/ChangePassword';
+import SignUp from '../pages/auth/signUp/SignUp';
 
 function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ function AppRoutes() {
         element={<VerificationCode />}
         path="/enter-your-phone-number/:phone"
       />
+      <Route element={<SignUp />} path="/signup" />
     </Routes>
   );
 }

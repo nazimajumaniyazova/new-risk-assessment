@@ -4,5 +4,10 @@
   "минут": "minut",
   "на": "ichida",
   "Отправить": "Yuborish",
-  "Отправить повторно": "Qayta yuborish"
+  "Отправить повторно": "Qayta yuborish",
+  "Пожалуйста, подтвердите свой пароль": "Parolingizni tasdiqlang!",
+  "Пароль": "Parol",
+  "Подтверждение пароля":"Parolni tasdiqlash",
+  "Условия": "Parol kamida bitta kichik harf, bitta katta harf, bitta raqam va bitta maxsus belgini [@$!%*#?&_^+-=] o'z ichiga olgan 8 dan 16 tagacha belgidan iborat bo'lishi kerak",
+  "Для подтверждения введите пароль ещё раз": "Parolni tasdiqlash uchun takroran kiriting"
 }
