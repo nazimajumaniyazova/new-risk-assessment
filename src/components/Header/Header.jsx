@@ -8,7 +8,7 @@ import Logo from '../Logo/Logo';
 
 const { Header } = Layout;
 
-function AppHeader() {
+function AppHeader({ props }) {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -22,6 +22,7 @@ function AppHeader() {
       <Logo classNames={styles.logo} hasText={true} />
       <LangSwitcher />
       <ThemeSwitcher />
+      {props}
     </Header>
   );
 }
