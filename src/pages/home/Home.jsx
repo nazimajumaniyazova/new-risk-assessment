@@ -23,6 +23,7 @@ import {
   Reserve,
 } from 'iconsax-react';
 import { useTranslation } from 'react-i18next';
+import AvatarButton from './components/AvatarButton/AvatarButton';
 
 const { Title } = Typography;
 const { Content } = Layout;
@@ -114,7 +115,7 @@ function Home() {
   const { t } = useTranslation('homePage');
   return (
     <>
-      <Header />
+      <Header props={<AvatarButton />} />
       <Content>
         <Banner />
         <section className={styles.wrapper}>

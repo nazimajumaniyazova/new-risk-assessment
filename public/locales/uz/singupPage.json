@@ -10,5 +10,8 @@
   "Пароль": "Parol",
   "Имя пользователя": "Foydalanuvchi nomi",
   "Пожалуйста, подтвердите свой пароль":"Iltimos, parolni tasdiqlang!",
-  "Подтверждение пароля":"Parolni tasdiqlash"
+  "Подтверждение пароля":"Parolni tasdiqlash",
+  "Номер телефона": "Telefon raqam",
+  "Номер должен состоять из 9 символов": "Raqam 9 ta belgidan iborat bo'lishi shart",
+  "Пароль не соответствует следующим правилам":"Parol quyida keltirilgan qoidalarga mos emas "
 }

@@ -15,7 +15,15 @@ const ChangePasswordForm = () => {
   const handleButtonClick = () => navigate('/login');
 
   const onFinish = () => {
-    console.log(phoneNumber);
+    var numberFormat = phoneNumber
+      .replace('(', ' ')
+      .replace(')', ' ')
+      .replace('+', ' ')
+      .split(' ')
+      .join('');
+
+    navigate(`/enter-your-phone-number/${numberFormat}`);
+    console.log(numberFormat);
   };
   return (
     <div className={styles.root}>

@@ -1,0 +1,41 @@
+.avatarButton {
+  .avatarCard {
+    border: none;
+    background-color: transparent;
+
+    .meta {
+      display: flex;
+      align-items: center;
+      .ant-card-meta-detail {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .avatarCard:hover {
+    cursor: pointer;
+    background-color: #7d83842d;
+  }
+}
+.dropdown_item1 {
+  display: flex;
+  align-items: center;
+  color: #5f2d9c !important;
+  svg {
+    margin-right: 10px;
+    path {
+      stroke: #5f2d9c;
+    }
+  }
+}
+.dropdown_item2 {
+  display: flex;
+  align-items: center;
+  color: #e23c3c !important;
+  svg {
+    margin-right: 10px;
+    path {
+      stroke: #e23c3c;
+    }
+  }
+}

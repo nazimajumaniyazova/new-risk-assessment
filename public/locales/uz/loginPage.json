@@ -5,6 +5,11 @@
   "Запомнить": "Meni eslab qolish",
   "Восстановление пароля": "Parolni tiklash",
   "Войти": "Kirish",
+<<<<<<< HEAD
   "У вас нет аккаунта": "Ro'yxatdan o'tmaganmisiz?",
   "Зарегистрироваться в системе": "Tizimda ro'yxatdan o'tish"
+=======
+  "У вас нет аккаунта": "Hisobingiz yo'qmi",
+  "Зарегистрироваться в системе": " Tizimda ro'yxatdan o'ting"
+>>>>>>> 91e5a2cb0f47db5ccda1210793ba032ebd53bc19
 }

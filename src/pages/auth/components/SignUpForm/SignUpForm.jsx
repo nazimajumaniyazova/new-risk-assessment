@@ -1,51 +1,24 @@
 import styles from './SignUpForm.module.scss';
 import './SignUp.scss';
 
-import { useState, useEffect } from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, InputNumber } from 'antd';
 import { Link } from 'react-router-dom';
 
 import Logo from '../../../../components/Logo/Logo';
 
 import { useTranslation } from 'react-i18next';
-import PatternInput from './patternInput/PatternInput';
 
 const SignUpForm = () => {
   const { t } = useTranslation('singupPage');
   const [form] = Form.useForm();
-  const [phoneNumber, setPhoneNumber] = useState('+998 (  )');
 
-  const onFinish = () => {
-    //console.log(phoneNumber);
-    console.log('ddd');
+  const onFinish = (values) => {
+    console.log(values);
   };
   const validateMessages = {
     required: t('Необходимо заполнить это поле'),
   };
-  const values = Form.useWatch('phone', form);
-  // const songValue = form.getFieldValue('phone');
-  console.log(values);
-  // form
-  //   .validateFields()
-  //   .then((values) => {
-  //     console.log(values);
-  //   })
-  //   .catch((errors) => {
-  //     // Do something with errors;
-  //   });
-  useEffect(() => {
-    console.log(values);
-    // form
-    //   .validateFields({
-    //     validateOnly: true,
-    //   })
-    //   .then((value) => {
-    //     console.log('from here', value);
-    //   })
-    //   .catch((err) => {
-    //     console.log('from err', err);
-    //   });
-  }, [values]);
+
   return (
     <div className={styles.root}>
       <Logo classNames={styles.logo} />
@@ -54,7 +27,7 @@ const SignUpForm = () => {
         autoComplete="off"
         onFinish={onFinish}
         validateMessages={validateMessages}
-        className={'sign-up__form'}
+        className={`${styles.form} sign-up__form`}
         form={form}
         name="validateOnly"
       >
@@ -65,20 +38,44 @@ const SignUpForm = () => {
         </Form.Item>
 
         <Form.Item name="username" rules={[{ required: true }]}>
-          <Input size="large" placeholder={t('Имя пользователя')} type="text" />
+          <Input
+            size="large"
+            placeholder={t('Имя пользователя')}
+            type="text"
+            autoComplete="off"
+          />
         </Form.Item>
 
-        <Form.Item name="phone" rules={[{ required: true, message: 'dd' }]}>
-          <PatternInput
-            setPhoneNumber={setPhoneNumber}
+        <Form.Item
+          name="phone"
+          rules={[
+            {
+              required: true,
+            },
+            {
+              pattern: /^[\d]{9,9}$/,
+              message: t('Номер должен состоять из 9 символов'),
+            },
+          ]}
+        >
+          <InputNumber
+            addonBefore="+998"
             placeholder={t('Номер телефона')}
-            phoneNumber={phoneNumber}
+            size="large"
+            style={{ width: '100%' }}
           />
         </Form.Item>
 
         <Form.Item
           name="password"
-          rules={[{ required: true }]}
+          rules={[
+            { required: true },
+            {
+              pattern:
+                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/,
+              message: t('Пароль не соответствует следующим правилам'),
+            },
+          ]}
           style={{ marginBottom: '10px' }}
         >
           <Input.Password
@@ -88,7 +85,9 @@ const SignUpForm = () => {
             type="password"
           />
         </Form.Item>
+
         <p className={styles.infoText}>{t('Условия')}</p>
+
         <Form.Item
           name="confirm"
           dependencies={['password']}
@@ -114,8 +113,10 @@ const SignUpForm = () => {
           <Input.Password
             placeholder={t('Подтверждение пароля')}
             size="large"
+            autoComplete="off"
           />
         </Form.Item>
+
         <p className={styles.infoText}>
           {t('Для подтверждения введите пароль ещё раз')}
         </p>
