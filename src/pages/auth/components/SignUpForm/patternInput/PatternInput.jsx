@@ -9,7 +9,7 @@ const PatternInput = ({ placeholder, setPhoneNumber, phoneNumber }) => {
     <PatternFormat
       className={`${styles.inputNum} ${
         !darkMode ? styles.inputLight : styles.inputDark
-      } ${phoneNumber === '+998 (  )          ' ? '' : styles.filled}`}
+      } ${phoneNumber.trim() === '+998 (  )' ? '' : styles.filled}`}
       placeholder={placeholder}
       format="+998 (##) ### ## ##"
       allowEmptyFormatting

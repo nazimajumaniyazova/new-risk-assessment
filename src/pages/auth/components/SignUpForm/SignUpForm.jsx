@@ -1,6 +1,7 @@
 import styles from './SignUpForm.module.scss';
+import './SignUp.scss';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -10,41 +11,64 @@ import { useTranslation } from 'react-i18next';
 import PatternInput from './patternInput/PatternInput';
 
 const SignUpForm = () => {
-  const { t } = useTranslation('loginPage');
-
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const { t } = useTranslation('singupPage');
+  const [form] = Form.useForm();
+  const [phoneNumber, setPhoneNumber] = useState('+998 (  )');
 
   const onFinish = () => {
-    console.log(phoneNumber);
+    //console.log(phoneNumber);
+    console.log('ddd');
   };
-
+  const validateMessages = {
+    required: t('Необходимо заполнить это поле'),
+  };
+  const values = Form.useWatch('phone', form);
+  // const songValue = form.getFieldValue('phone');
+  console.log(values);
+  // form
+  //   .validateFields()
+  //   .then((values) => {
+  //     console.log(values);
+  //   })
+  //   .catch((errors) => {
+  //     // Do something with errors;
+  //   });
+  useEffect(() => {
+    console.log(values);
+    // form
+    //   .validateFields({
+    //     validateOnly: true,
+    //   })
+    //   .then((value) => {
+    //     console.log('from here', value);
+    //   })
+    //   .catch((err) => {
+    //     console.log('from err', err);
+    //   });
+  }, [values]);
   return (
     <div className={styles.root}>
       <Logo classNames={styles.logo} />
-      <Form layout={'vertical'} autoComplete="off" onFinish={onFinish}>
+      <Form
+        layout={'vertical'}
+        autoComplete="off"
+        onFinish={onFinish}
+        validateMessages={validateMessages}
+        className={'sign-up__form'}
+        form={form}
+        name="validateOnly"
+      >
         <Form.Item>
           <div className={styles.title}>
             {t('Зарегистрироваться в системе')}
           </div>
         </Form.Item>
 
-        <Form.Item
-          name="username"
-          rules={[
-            { required: true, message: '' },
-            { whitespace: true, message: '' },
-          ]}
-        >
+        <Form.Item name="username" rules={[{ required: true }]}>
           <Input size="large" placeholder={t('Имя пользователя')} type="text" />
         </Form.Item>
 
-        <Form.Item
-          name="username"
-          rules={[
-            { required: true, message: '' },
-            { whitespace: true, message: '' },
-          ]}
-        >
+        <Form.Item name="phone" rules={[{ required: true, message: 'dd' }]}>
           <PatternInput
             setPhoneNumber={setPhoneNumber}
             placeholder={t('Номер телефона')}
@@ -54,10 +78,7 @@ const SignUpForm = () => {
 
         <Form.Item
           name="password"
-          rules={[
-            { required: true, message: '' },
-            { whitespace: true, message: '' },
-          ]}
+          rules={[{ required: true }]}
           style={{ marginBottom: '10px' }}
         >
           <Input.Password
@@ -67,11 +88,7 @@ const SignUpForm = () => {
             type="password"
           />
         </Form.Item>
-        <p className={styles.infoText}>
-          Пароль должен содержать от 8 до 16 символов, включая как минимум одну
-          строчную, одну заглавную букву, одну цифру и один спецсимвол
-          [@$!%*#?&_^+-=]
-        </p>
+        <p className={styles.infoText}>{t('Условия')}</p>
         <Form.Item
           name="confirm"
           dependencies={['password']}
@@ -80,7 +97,7 @@ const SignUpForm = () => {
           rules={[
             {
               required: true,
-              message: 'Please confirm your password!',
+              message: t('Пожалуйста, подтвердите свой пароль'),
             },
             ({ getFieldValue }) => ({
               validator(_, value) {
@@ -88,16 +105,19 @@ const SignUpForm = () => {
                   return Promise.resolve();
                 }
                 return Promise.reject(
-                  new Error('Пароль, который вы ввели, не соответствует!')
+                  new Error(t('Пароль, который вы ввели, не соответствует!'))
                 );
               },
             }),
           ]}
         >
-          <Input.Password placeholder="Подтверждение пароля" size="large" />
+          <Input.Password
+            placeholder={t('Подтверждение пароля')}
+            size="large"
+          />
         </Form.Item>
         <p className={styles.infoText}>
-          Для подтверждения введите пароль ещё раз
+          {t('Для подтверждения введите пароль ещё раз')}
         </p>
 
         <Button
@@ -111,7 +131,8 @@ const SignUpForm = () => {
 
         <Form.Item>
           <div className={styles.centered}>
-            {t('У вас есть аккаунт')}?<Link to="/signup"> {t(' Войти')}</Link>
+            {t('У вас есть аккаунт')}
+            <Link to="/login"> {t('Войти')}</Link>
           </div>
         </Form.Item>
       </Form>

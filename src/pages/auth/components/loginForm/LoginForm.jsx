@@ -73,7 +73,7 @@ const LoginForm = () => {
 
         <Form.Item>
           <div className={styles.centered}>
-            {t('У вас нет аккаунта')}?
+            {t('У вас нет аккаунта')}
             <Link to="/signup"> {t('Зарегистрироваться в системе')}</Link>
           </div>
         </Form.Item>

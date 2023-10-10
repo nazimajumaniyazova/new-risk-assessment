@@ -1,3 +1,14 @@
 {
-  "Зарегистрироваться в системе": "Tizimda ro'yxatdan o'tish"
+  "Зарегистрироваться в системе": "Tizimda ro'yxatdan o'tish",
+  "Пароль, который вы ввели, не соответствует!": "Siz kiritgan parol mos emas!",
+  "Необходимо заполнить это поле": "Ushbu qator to'ldirilishi shart",
+  "У вас есть аккаунт": "Tizimda ro'yxatdan o'tganmisiz?",
+  "Войти": "Kirish",
+  "Зарегистрироваться":"Roʻyxatdan oʻtish",
+  "Для подтверждения введите пароль ещё раз":"Parolni tasdiqlash uchun takroran kiriting",
+  "Условия": "Parol kamida bitta kichik harf, bitta katta harf, bitta raqam va bitta maxsus belgini [@$!%*#?&_^+-=] o'z ichiga olgan 8 dan 16 tagacha belgidan iborat bo'lishi kerak",
+  "Пароль": "Parol",
+  "Имя пользователя": "Foydalanuvchi nomi",
+  "Пожалуйста, подтвердите свой пароль":"Iltimos, parolni tasdiqlang!",
+  "Подтверждение пароля":"Parolni tasdiqlash"
 }

@@ -1,10 +1,10 @@
 {
-  "Войти в учетную запись": "Akkauntga kirish",
+  "Войти в учетную запись": "Tizimga kirish",
   "Имя пользователя": "Foydalanuvchi nomi",
   "Пароль": "Parol",
   "Запомнить": "Meni eslab qolish",
   "Восстановление пароля": "Parolni tiklash",
   "Войти": "Kirish",
-  "У вас нет аккаунта": "Hisobingiz yo'qmi",
-  "Зарегистрироваться в системе": "Tizimda ro'yxatdan o'ting"
+  "У вас нет аккаунта": "Ro'yxatdan o'tmaganmisiz?",
+  "Зарегистрироваться в системе": "Tizimda ro'yxatdan o'tish"
 }
